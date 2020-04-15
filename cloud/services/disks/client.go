@@ -44,7 +44,7 @@ func NewClient(subscriptionID string, authorizer autorest.Authorizer) *AzureClie
 
 // newDisksClient creates a new disks client from subscription ID.
 func newDisksClient(subscriptionID string, authorizer autorest.Authorizer) compute.DisksClient {
-	disksClient := compute.NewDisksClient(subscriptionID)
+	disksClient := compute.NewDisksClientWithBaseURI(azure.DefaultBaseURI, subscriptionID)
 	disksClient.Authorizer = authorizer
 	disksClient.AddToUserAgent(azure.UserAgent)
 	return disksClient

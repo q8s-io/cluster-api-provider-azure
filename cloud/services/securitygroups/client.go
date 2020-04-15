@@ -46,7 +46,7 @@ func NewClient(subscriptionID string, authorizer autorest.Authorizer) *AzureClie
 
 // newSecurityGroupsClient creates a new security groups client from subscription ID.
 func newSecurityGroupsClient(subscriptionID string, authorizer autorest.Authorizer) network.SecurityGroupsClient {
-	securityGroupsClient := network.NewSecurityGroupsClient(subscriptionID)
+	securityGroupsClient := network.NewSecurityGroupsClientWithBaseURI(azure.DefaultBaseURI, subscriptionID)
 	securityGroupsClient.Authorizer = authorizer
 	securityGroupsClient.AddToUserAgent(azure.UserAgent)
 	return securityGroupsClient

@@ -46,7 +46,7 @@ func NewClient(subscriptionID string, authorizer autorest.Authorizer) *AzureClie
 
 // newLoadbalancersClient creates a new load balancer client from subscription ID.
 func newLoadBalancersClient(subscriptionID string, authorizer autorest.Authorizer) network.LoadBalancersClient {
-	loadBalancersClient := network.NewLoadBalancersClient(subscriptionID)
+	loadBalancersClient := network.NewLoadBalancersClientWithBaseURI(azure.DefaultBaseURI, subscriptionID)
 	loadBalancersClient.Authorizer = authorizer
 	loadBalancersClient.AddToUserAgent(azure.UserAgent)
 	return loadBalancersClient

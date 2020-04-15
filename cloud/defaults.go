@@ -36,9 +36,12 @@ const (
 	// DefaultInternalLBIPAddress is the default internal load balancer ip address
 	DefaultInternalLBIPAddress = "10.0.0.100"
 	// DefaultAzureDNSZone is the default provided azure dns zone
-	DefaultAzureDNSZone = "cloudapp.azure.com"
+	DefaultAzureDNSZone = "cloudapp.chinacloudapi.cn"
 	// UserAgent used for communicating with azure
 	UserAgent = "cluster-api-azure-services"
+
+	// https://docs.azure.cn/zh-cn/articles/guidance/developerdifferences
+	DefaultBaseURI = "https://management.chinacloudapi.cn"
 )
 
 const (

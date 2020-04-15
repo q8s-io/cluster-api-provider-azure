@@ -46,7 +46,7 @@ func NewClient(subscriptionID string, authorizer autorest.Authorizer) *AzureClie
 
 // newVirtualMachineExtensionsClient creates a new VM extension client from subscription ID.
 func newVirtualMachineExtensionsClient(subscriptionID string, authorizer autorest.Authorizer) compute.VirtualMachineExtensionsClient {
-	vmExtClient := compute.NewVirtualMachineExtensionsClient(subscriptionID)
+	vmExtClient := compute.NewVirtualMachineExtensionsClientWithBaseURI(azure.DefaultBaseURI, subscriptionID)
 	vmExtClient.Authorizer = authorizer
 	vmExtClient.AddToUserAgent(azure.UserAgent)
 	return vmExtClient

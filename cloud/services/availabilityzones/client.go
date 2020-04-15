@@ -44,7 +44,7 @@ func NewClient(subscriptionID string, authorizer autorest.Authorizer) *AzureClie
 
 // getResourceSkusClient creates a new availability zones client from subscription ID.
 func newResourceSkusClient(subscriptionID string, authorizer autorest.Authorizer) compute.ResourceSkusClient {
-	skusClient := compute.NewResourceSkusClient(subscriptionID)
+	skusClient := compute.NewResourceSkusClientWithBaseURI(azure.DefaultBaseURI, subscriptionID)
 	skusClient.Authorizer = authorizer
 	skusClient.AddToUserAgent(azure.UserAgent)
 	return skusClient

@@ -47,7 +47,7 @@ func NewClient(subscriptionID string, authorizer autorest.Authorizer) *AzureClie
 
 // newVirtualNetworksClient creates a new vnet client from subscription ID.
 func newVirtualNetworksClient(subscriptionID string, authorizer autorest.Authorizer) network.VirtualNetworksClient {
-	vnetsClient := network.NewVirtualNetworksClient(subscriptionID)
+	vnetsClient := network.NewVirtualNetworksClientWithBaseURI(azure.DefaultBaseURI, subscriptionID)
 	vnetsClient.Authorizer = authorizer
 	vnetsClient.AddToUserAgent(azure.UserAgent)
 	return vnetsClient
