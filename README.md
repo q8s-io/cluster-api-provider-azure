@@ -19,11 +19,11 @@ hybrid deployments of Kubernetes.
 
 Check out the [Cluster API Quick Start][quickstart] to create your first Kubernetes cluster on Azure using Cluster API.
 
-## Features
+## Flavors
 
-TODO
+See the [flavors documentation][flavors_doc] to know which cluster templates are provided by CAPZ.
 
----
+------
 
 ## Support Policy
 
@@ -42,16 +42,20 @@ This provider's versions are able to install and manage the following versions o
 | Kubernetes 1.16 | ✓ | ✓ |
 | Kubernetes 1.17 |  | ✓ |
 | Kubernetes 1.18 |  | ✓ |
+| Kubernetes 1.19 |  | ✓ |
 
 Each version of Cluster API for Azure will attempt to support at least two Kubernetes versions e.g., Cluster API for Azure `v0.1` may support Kubernetes 1.13 and Kubernetes 1.14.
 
 **NOTE:** As the versioning for this project is tied to the versioning of Cluster API, future modifications to this policy may be made to more closely align with other providers in the Cluster API ecosystem.
 
----
+------
 
 ## Documentation
 
-Documentation is in the `/docs` directory, and the [index is here](docs/README.md).
+Please see our [Book](https://capz.sigs.k8s.io) for in-depth user documentation.
+
+Additional docs can be found in the `/docs` directory, and the [index is here](https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/master/docs/README.md).
+
 
 ## Getting involved and contributing
 
@@ -60,7 +64,7 @@ maintainers and community, would love your suggestions, contributions, and help!
 Also, the maintainers can be contacted at any time to learn more about how to get
 involved.
 
-To set up your environment checkout the [development guide](docs/development.md).
+To set up your environment checkout the [development guide](https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/master/docs/development.md).
 
 In the interest of getting more new people involved, we tag issues with
 [`good first issue`][good_first_issue].
@@ -78,13 +82,13 @@ do!
 
 This repository uses the Kubernetes bots.  See a full list of the commands [here][prow].
 
-### Implementer office hours
+### Office hours
 
-Maintainers hold office hours every two weeks, with sessions open to all
-developers working on this project.
+The community holds office hours every two weeks, with sessions open to all users and
+developers.
 
-Office hours are hosted on a zoom video chat every other Friday
-at 09:00 (PT) / 12:00 (ET) / 17:00 (UTC),
+Office hours are hosted on a zoom video chat every other Thursday
+at 08:00 (PT) / 11:00 (ET) / 16:00 (UTC),
 and are published on the [Kubernetes community meetings calendar][gcal].
 
 ### Other ways to communicate with the contributors
@@ -105,7 +109,7 @@ If you think you have found a bug please follow the instructions below.
 
 ### Tracking new features
 
-We also use the issue tracker to track features. If you have an idea for a feature, or think you can help kops become even more awesome follow the steps below.
+We also use the issue tracker to track features. If you have an idea for a feature, or think you can help Cluster API Provider Azure become even more awesome, then follow the steps below.
 
 - Open a [feature request][feature_request].
 - Remember users might be searching for your issue in the future, so please
@@ -129,3 +133,4 @@ We also use the issue tracker to track features. If you have an idea for a featu
 [slack_info]: https://github.com/kubernetes/community/blob/master/communication.md#social-media
 [cluster_api]: https://github.com/kubernetes-sigs/cluster-api
 [quickstart]: https://cluster-api.sigs.k8s.io/user/quick-start.html
+[flavors_doc]: https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/master/templates/flavors/README.md

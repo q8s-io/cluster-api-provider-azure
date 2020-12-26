@@ -5,6 +5,7 @@ metadata:
   namespace: system
   labels:
     control-plane: capz-controller-manager
+    aadpodidbinding: capz-controller-aadpodidentity-selector
 spec:
   selector:
     matchLabels:
@@ -14,10 +15,14 @@ spec:
     metadata:
       labels:
         control-plane: capz-controller-manager
+        aadpodidbinding: capz-controller-aadpodidentity-selector
+      annotations:
+        kubectl.kubernetes.io/default-logs-container: manager
     spec:
       containers:
         - args:
             - --enable-leader-election
+            - "--feature-gates=MachinePool=${EXP_MACHINE_POOL:=false},AKS=${EXP_AKS:=false}"
           image: controller:latest
           imagePullPolicy: Always
           name: manager
@@ -33,4 +38,17 @@ spec:
             httpGet:
               path: /healthz
               port: healthz
+          env:
+          - name: NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace      
       terminationGracePeriodSeconds: 10
